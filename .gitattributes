@@ -1,2 +1,1 @@
-Red_Queen_Attack/** filter=lfs diff=lfs merge=lfs -text
 *.json filter=lfs diff=lfs merge=lfs -text
