@@ -23,7 +23,7 @@ python red_queen_attack_generation.py --action_data_path './Data/beavertail_acti
 
 Alternatively, we provide the actual [red queen attack](https://github.com/kriti-hippo/red_queen/blob/main/Data/Red_Queen_Attack.zip) and [ablation data](https://github.com/kriti-hippo/red_queen/tree/main/Red_Queen_Ablation) in repo directly. Download and try them yourself~
 
-Our multi-turn scenario templates are available in [scenario_template.py](https://github.com/kriti-hippo/red_queen/tree/main/Utils)
+Our multi-turn scenario templates are available in [scenario_template.py](https://github.com/kriti-hippo/red_queen/blob/main/Utils/scenario_template.py).
 
 ## Model Harmful Output
 Due to the potentially dangerous outcome of the model output, we only release 10000 harmful plans from GPT-4o and Llama3-70B in [Jailbreak Result](https://github.com/kriti-hippo/red_queen/tree/main/Jailbreak_Result).
