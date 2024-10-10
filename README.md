@@ -32,7 +32,7 @@ Due to the potentially dangerous outcome of the model output, we only release 10
 We proposed a mitigation strategy, Red Queen Guard, a DPO preference dataset that can reduce attack success rate to less than 1% while maintaining model performance on standard benchmarks. In [DPO_Data](https://github.com/kriti-hippo/red_queen/tree/main/DPO_Data), [dpo_red_guard.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard.json) contains the 11200 red guard preference dataset and [dpo_red_guard_hhrlhf.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard_hhrlhf.json) contains the merge data from red guard and sample hh-rlhf dataset.
 
 ## Other Data
-[beavertail_action_sample.npy](https://github.com/kriti-hippo/red_queen/blob/main/Data/beavertail_action_sample.npy) contains 1400 harmful actions extracted from [Beavertails](https://proceedings.neurips.cc/paper_files/paper/2023/file/4dbb61cb68671edc4ca3712d70083b9f-Paper-Datasets_and_Benchmarks.pdf) and [evaluation_validation.json](https://github.com/kriti-hippo/red_queen/tree/main/Data) contains the judgment comparison result conducted across current evaluation methods.
+[beavertail_action_sample.npy](https://github.com/kriti-hippo/red_queen/blob/main/Data/beavertail_action_sample.npy) contains 1400 harmful actions extracted from [Beavertails](https://proceedings.neurips.cc/paper_files/paper/2023/file/4dbb61cb68671edc4ca3712d70083b9f-Paper-Datasets_and_Benchmarks.pdf) and [evaluation_validation.json](https://github.com/kriti-hippo/red_queen/blob/main/Data/evaluation_validation.json) contains the judgment comparison result conducted across current evaluation methods.
 
 
 ## ⚖️ Ethical Considerations
