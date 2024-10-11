@@ -1,52 +1,77 @@
 # ♛ RED QUEEN: Safeguarding Large Language Models against Concealed Multi-Turn Jailbreaking
-Red Queen is to follow all Umbrella orders, but also to protect human lives. — Resident Evil
 
-The rapid progress of Large Language Models (LLMs) has unlocked new possibilities but also heightened the risk of misuse. Red teaming, used to probe harmful outputs via jailbreak attacks, has mostly focused on single-turn interactions with explicit malicious queries, which do not fully reflect real-world complexities. 
+*Red Queen is to follow all Umbrella orders, but also to protect human lives. — Resident Evil*
 
-To address this, we propose RED QUEEN ATTACK, a multi-turn jailbreak strategy where malicious intent is concealed across multi-turn interactions. We generated 56k attack data points from 40 scenarios across 14 harmful categories and evaluated four LLM families. Results show that all models are vulnerable, with GPT-4o reaching 87.62% success and Llama3-70B reaching 75.4% success, and larger models proving more susceptible.
+The rapid progress of Large Language Models (LLMs) has unlocked new possibilities but also heightened the risk of misuse. Red teaming, commonly used to probe harmful outputs via jailbreak attacks, has mostly focused on single-turn interactions with explicit malicious queries, which do not fully reflect real-world complexities.
 
-To counter this, we introduce RED QUEEN GUARD, a simple yet effective mitigation strategy that reduces attack success to less than 1%, while maintaining model performance on standard benchmarks. 
+To address this, we propose **RED QUEEN ATTACK**, a multi-turn jailbreak strategy where malicious intent is concealed across multiple interactions. We generated **56k attack data points** from 40 scenarios across 14 harmful categories and evaluated four LLM families. Results show that all models are vulnerable, with **GPT-4o reaching 87.62% success** and **Llama3-70B reaching 75.4% success**, and larger models proving more susceptible.
 
-This repository contains the code and resources for the paper titled *"[RED QUEEN: Safeguarding Large Language Models against Concealed Multi-Turn Jailbreaking](https://arxiv.org/abs/2409.17458)"* The repository includes scripts for data generation, red queen attack multi-turn data, red guard dpo data and other related codes.
+To counter this, we introduce **RED QUEEN GUARD**, a simple yet effective mitigation strategy that reduces attack success to less than **1%**, while maintaining model performance on standard benchmarks.
 
-## Red Queen Data Generation
-To generate Red Queen Data used in this paper, run the following command: 
-```
+This repository contains the code and resources for the paper titled *["RED QUEEN: Safeguarding Large Language Models against Concealed Multi-Turn Jailbreaking"](https://arxiv.org/abs/2409.17458)*. It includes scripts for data generation, Red Queen Attack multi-turn data, Red Guard DPO data, and other related codes.
+
+---
+
+## 📊 Red Queen Data Generation
+
+To generate Red Queen data used in this paper, run the following command:
+
+```sh
 mkdir Red_queen_attack
 python red_queen_attack_generation.py --action_data_path './Data/beavertail_action_sample.npy' --output_path './Red_queen_attack' --type 'normal'
 ```
 
-To generate ablation data (multi-turn and direct in Table 4) used in this paper, run the following command:
-```
+To generate ablation data (multi-turn and direct in Table 4), run:
+
+```sh
 python red_queen_attack_generation.py --action_data_path './Data/beavertail_action_sample.npy' --output_path './Red_queen_ablation' --type 'ablation'
 ```
 
-Alternatively, we provide the actual [red queen attack](https://github.com/kriti-hippo/red_queen/blob/main/Data/Red_Queen_Attack.zip) and [ablation data](https://github.com/kriti-hippo/red_queen/tree/main/Red_Queen_Ablation) in repo directly. Download and try them yourself~
+Alternatively, you can download the actual [Red Queen Attack](https://github.com/kriti-hippo/red_queen/blob/main/Data/Red_Queen_Attack.zip) and [Ablation Data](https://github.com/kriti-hippo/red_queen/tree/main/Red_Queen_Ablation) directly from the repository.
 
-Our multi-turn scenario templates are available in [scenario_template.py](https://github.com/kriti-hippo/red_queen/blob/main/Utils/scenario_template.py).
+Our multi-turn scenario templates are available in [scenario\_template.py](https://github.com/kriti-hippo/red_queen/blob/main/Utils/scenario_template.py).
 
-## Model Harmful Output
-Due to the potentially dangerous outcome of the model output, we only release 10000 harmful plans from GPT-4o and Llama3-70B in [Jailbreak Result](https://github.com/kriti-hippo/red_queen/tree/main/Jailbreak_Result).
+---
 
-## Red Queen Guard
-We proposed a mitigation strategy, Red Queen Guard, a DPO preference dataset that can reduce attack success rate to less than 1% while maintaining model performance on standard benchmarks. In [DPO_Data](https://github.com/kriti-hippo/red_queen/tree/main/DPO_Data), [dpo_red_guard.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard.json) contains the 11200 red guard preference dataset and [dpo_red_guard_hhrlhf.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard_hhrlhf.json) contains the merge data from red guard and sample hh-rlhf dataset.
+## ⚠️ Model Harmful Output
 
-## Other Data
-[beavertail_action_sample.npy](https://github.com/kriti-hippo/red_queen/blob/main/Data/beavertail_action_sample.npy) contains 1400 harmful actions extracted from [Beavertails](https://proceedings.neurips.cc/paper_files/paper/2023/file/4dbb61cb68671edc4ca3712d70083b9f-Paper-Datasets_and_Benchmarks.pdf) and [evaluation_validation.json](https://github.com/kriti-hippo/red_queen/blob/main/Data/evaluation_validation.json) contains the judgment comparison result conducted across current evaluation methods.
+Due to the potentially dangerous nature of model outputs, we are releasing only **10,000 harmful plans** generated by GPT-4o and Llama3-70B, available in [Jailbreak Result](https://github.com/kriti-hippo/red_queen/tree/main/Jailbreak_Result).
 
+---
+
+## 🛡️ Red Queen Guard
+
+We propose **Red Queen Guard**, a DPO preference dataset that significantly reduces attack success rates to below **1%** while preserving model performance on standard benchmarks. In the [DPO\_Data](https://github.com/kriti-hippo/red_queen/tree/main/DPO_Data) folder, you can find:
+
+- [dpo\_red\_guard.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard.json) – contains the **11,200** Red Guard preference dataset.
+- [dpo\_red\_guard\_hhrlhf.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard_hhrlhf.json) – contains the merged data from Red Guard and the sample HH-RLHF dataset.
+
+---
+
+## 📂 Other Data
+
+- [beavertail\_action\_sample.npy](https://github.com/kriti-hippo/red_queen/blob/main/Data/beavertail_action_sample.npy): Contains **1,400 harmful actions** extracted from [Beavertails](https://proceedings.neurips.cc/paper_files/paper/2023/file/4dbb61cb68671edc4ca3712d70083b9f-Paper-Datasets_and_Benchmarks.pdf).
+- [evaluation\_validation.json](https://github.com/kriti-hippo/red_queen/blob/main/Data/evaluation_validation.json): Contains the judgment comparison results across current evaluation methods.
+
+---
 
 ## ⚖️ Ethical Considerations
 
-This study is centered on exploring the potential security vulnerabilities in large language models (LLMs). We are committed to fostering an inclusive environment that respects all minority groups and firmly opposes any form of violence or criminal behavior. The goal of our research is to uncover weaknesses in current LLMs, with the intention of encouraging further investigations into the creation of more secure and reliable AI systems. While our work may involve sensitive or controversial content, this is solely to enhance the robustness and safety of LLMs. Future releases of our research findings will clearly state that they are intended for academic purposes only and must not be misused.
+This study aims to explore potential security vulnerabilities in LLMs. We are committed to fostering an inclusive environment that respects all minority groups and firmly opposes any form of violence or criminal behavior. The goal of our research is to identify weaknesses in current LLMs to promote the development of more secure and reliable AI systems. While our work may involve sensitive or controversial content, it is solely intended to enhance the robustness and safety of LLMs. Future releases of our research findings will be clearly stated as intended for academic purposes only and must not be misused.
+
+---
 
 ## 🙏 Acknowledgement
 
-We thank our co-authors and colleagues at Hippocratic AI for their valuable suggestions on this research. Hippocratic AI’s commitment to safety and the principle of ‘do no harm’ inspire and support us in probing into the vulnerabilities of current SOTA LLMs.
+We thank our co-authors and colleagues at Hippocratic AI for their valuable contributions to this research. Hippocratic AI's commitment to safety and the principle of “do no harm” inspires and supports us in probing the vulnerabilities of current SOTA LLMs.
 
+---
 
-### Cite
+### 📜 Cite
+
 If you find Red Queen useful for your work, please cite:
-```
+
+```bibtex
 @article{jiang2024red,
   title={RED QUEEN: Safeguarding Large Language Models against Concealed Multi-Turn Jailbreaking},
   author={Jiang, Yifan and Aggarwal, Kriti and Laud, Tanmay and Munir, Kashif and Pujara, Jay and Mukherjee, Subhabrata},
@@ -54,3 +79,4 @@ If you find Red Queen useful for your work, please cite:
   year={2024}
 }
 ```
+
