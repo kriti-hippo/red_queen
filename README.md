@@ -11,6 +11,7 @@ To counter this, we introduce **RED QUEEN GUARD**, a simple yet effective mitiga
 This repository contains the code and resources for the paper titled *["RED QUEEN: Safeguarding Large Language Models against Concealed Multi-Turn Jailbreaking"](https://arxiv.org/abs/2409.17458)*. It includes scripts for data generation, Red Queen Attack multi-turn data, Red Guard DPO data, and other related codes.
 
 Check [Red Queen Website](https://redqueen1011.github.io/) for a brief summary.
+
 ---
 
 ## 📊 Red Queen Data Generation
