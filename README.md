@@ -4,7 +4,7 @@
 
 The rapid progress of Large Language Models (LLMs) has unlocked new possibilities but also heightened the risk of misuse. Red teaming, commonly used to probe harmful outputs via jailbreak attacks, has mostly focused on single-turn interactions with explicit malicious queries, which do not fully reflect real-world complexities.
 
-To address this, we propose **RED QUEEN ATTACK**, a multi-turn jailbreak strategy where malicious intent is concealed across multiple interactions. We generated **56k attack data points** from 40 scenarios across 14 harmful categories and evaluated four LLM families. Results show that all models are vulnerable, with **GPT-4o reaching 87.62% success** and **Llama3-70B reaching 75.4% success**, and larger models proving more susceptible.
+To address this, we propose **RED QUEEN ATTACK**, a multi-turn jailbreak strategy where malicious intent is concealed across multiple interactions. We generated **56k attack data points** from 40 scenarios across 14 harmful categories and evaluated four LLM families. Results show that all models are vulnerable, with **reaching 87.62% attack success rate on GPT-4o** and **75.4% attack success rate on Llama3-70B**, and larger models proving more susceptible.
 
 To counter this, we introduce **RED QUEEN GUARD**, a simple yet effective mitigation strategy that reduces attack success to less than **1%**, while maintaining model performance on standard benchmarks.
 
