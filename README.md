@@ -43,8 +43,8 @@ Due to the potentially dangerous nature of model outputs, we are releasing only 
 
 We propose **Red Queen Guard**, a DPO preference dataset that significantly reduces attack success rates to below **1%** while preserving model performance on standard benchmarks. In the [DPO\_Data](https://github.com/kriti-hippo/red_queen/tree/main/DPO_Data) folder, you can find:
 
-- [dpo\_red\_guard.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard.json) – contains the **11,200** Red Guard preference dataset.
-- [dpo\_red\_guard\_hhrlhf.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard_hhrlhf.json) – contains the merged data from Red Guard and the sample HH-RLHF dataset.
+- [dpo\_red\_guard.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard.json) – contains the **11,200** Red Queen Guard preference dataset.
+- [dpo\_red\_guard\_hhrlhf.json](https://github.com/kriti-hippo/red_queen/blob/main/DPO_Data/dpo_red_guard_hhrlhf.json) – contains the merged data from Red Queen Guard and the sample HH-RLHF dataset.
 
 ---
 
