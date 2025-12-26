@@ -12,6 +12,8 @@ This repository contains the code and resources for the paper titled *["RED QUEE
 
 Check [Red Queen Website](https://redqueen1011.github.io/) for a brief summary.
 
+RED QUEEN is also available on [HuggingFace](https://huggingface.co/datasets/YifanJ/Red_Queen)!
+
 ---
 
 ## 📊 Red Queen Data Generation
